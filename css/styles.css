@@ -1,4 +1,6 @@
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -18,7 +20,6 @@ body {
           align-items: center;
   font-family: Arial, Helvetica, sans-serif;
   color: #d1d1d1;
-  background: repeating-linear-gradient(-45deg, #1b1b1b 0px, #1b1b1b 97px, #181818 97px, #181818 194px, #141414 194px, #141414 291px);
 }
 
 .container {
@@ -26,8 +27,8 @@ body {
   background: repeating-linear-gradient(45deg, #1b1b1b 0px, #1b1b1b 97px, #181818 97px, #181818 194px, #141414 194px, #141414 291px);
   padding: 1rem;
   border-radius: 20px;
-  -webkit-box-shadow: 50px 50px 100px #3b3b3b,  -50px -50px 100px #595959;
-          box-shadow: 50px 50px 100px #3b3b3b,  -50px -50px 100px #595959;
+  -webkit-box-shadow: 50px 50px 100px #3b3b3b, -50px -50px 100px #595959;
+          box-shadow: 50px 50px 100px #3b3b3b, -50px -50px 100px #595959;
 }
 
 @media screen and (max-width: 40rem) {
@@ -70,14 +71,14 @@ body {
      object-fit: cover;
   padding: 0.5rem;
   border-radius: 50%;
-  background: linear-gradient(45deg, #191654, #43C6AC);
+  background: linear-gradient(45deg, #191654, #43c6ac);
   background-size: 200% 200%;
   -webkit-animation: animated-gradient 2s linear infinite;
           animation: animated-gradient 2s linear infinite;
 }
 
 .container .card-body {
-  font-family: 'Dosis', sans-serif;
+  font-family: "Dosis", sans-serif;
 }
 
 .container .card-body--title {
@@ -88,9 +89,9 @@ body {
 .container .card-body--sub-title {
   font-weight: 200;
   font-size: 1.25rem;
-  letter-spacing: .4em;
+  letter-spacing: 0.4em;
   margin-bottom: 1rem;
-  padding: .5rem 0;
+  padding: 0.5rem 0;
   position: relative;
   color: rgba(209, 209, 209, 0.6);
 }
@@ -117,7 +118,81 @@ body {
 
 .container .card-body--about {
   line-height: 1.6;
-  font-family: 'Cutive Mono', monospace;
+  font-family: "Cutive Mono", monospace;
   color: rgba(209, 209, 209, 0.5);
+}
+
+.main {
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 0.875rem;
+  color: #333;
+}
+
+.main-iconContainer--icon {
+  color: #fff;
+  cursor: pointer;
+  background-color: #333;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0.75rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 0;
+  outline: 0;
+  position: relative;
+}
+
+.main-iconContainer--icon::before, .main-iconContainer--icon::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid;
+  display: block;
+  padding: 1rem;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.main-iconContainer--icon::before {
+  top: -10px;
+  left: -10px;
+  border-color: transparent green transparent green;
+  width: 80px;
+  height: 80px;
+}
+
+.main-iconContainer--icon::after {
+  top: -20px;
+  left: -20px;
+  border-color: red transparent red transparent;
+  width: 100px;
+  height: 100px;
+}
+
+.main-iconContainer--icon:hover {
+  background-color: rgba(51, 51, 51, 0.6);
+}
+
+.main-iconContainer--icon:hover::before {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.main-iconContainer--icon:hover::after {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transform: rotate(-360deg);
+          transform: rotate(-360deg);
 }
 /*# sourceMappingURL=styles.css.map */
